@@ -1,34 +1,38 @@
 package clase4.actividades;
 
 import java.util.Collections;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Actividad1 {
-    
+    /*
+    Implementar una función que, siguiendo la técnica de diseño greedy, determine si 
+    es posible entregar un cambio exacto utilizando una lista de monedas disponible.
+    Realizar pseudocódigo e implementación en java.
+    Indicar la complejidad algorítmica
+    */    
+        public static void main(String[] args) {
+            int[] monedas = {50,10,10,5};
+            int monto = 70;
 
-    public  boolean cambioExacto (List<Integer> monedas, int monto) {
-        /*
-            función Boolean encontrarMinimoMonedas(monedas, monto)
-            ordenar monedas de menor a mayor
+            System.out.println(tieneCambio(monedas,monto));
+        }
 
-            Entero resto = monto;
+        private static boolean tieneCambio(int[] monedas, int monto) {
+            boolean rta = false;
+            ArrayList<Integer> numeros = new ArrayList<>();
+            for(int i=0; i< monedas.length; i++) {
+                numeros.add(monedas[i]);
+            }
 
-            para i desde el índice más alto de monedas hasta el índice 0 (de mayor a menor)
+            Collections.sort(numeros,Collections.reverseOrder());
+            for(Integer n : numeros) {
+                System.out.println(monto + " " + n);
+                monto -= n;
+                if (monto==0) return true;
+            }
 
-                si resto < monedas[i] and resto > 0 
-                    si resto = 0
-                        devolver true
-                    sino 
-                        devolver false
-                fin si 
-
-            fin para
-            fin función
-         */
-        
-        Collections.sort(monedas);   
-
-        return true;
-    }
+            return rta;
+        }
 
 }
+

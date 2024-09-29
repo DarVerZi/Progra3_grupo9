@@ -1,0 +1,3 @@
+La complejidad de ordenar los objetos por valor/peso es (O(n \log n)), donde (n) es el número de objetos.
+La complejidad del bucle que recorre los objetos para cargarlos en el camión es (O(n)).
+Por lo tanto, la complejidad temporal total es (O(n \log n)).
