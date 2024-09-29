@@ -1,7 +1,7 @@
 Para analizar la complejidad algorítmica de tu método clienteMayorScore utilizando el método inductivo, podemos seguir estos pasos conceptuales:
 
 Caso Base:
-Cuando la lista de clientes tiene un solo elemento (clientes.size() == 1), el algoritmo simplemente devuelve ese elemento. Este caso tiene una complejidad constante, es decir, (O(1)).
+Cuando la lista de clientes tiene un solo elemento, el algoritmo simplemente devuelve ese elemento. Este caso tiene una complejidad constante, (O(1)).
 
 Paso Inductivo:
 Cuando la lista tiene más de un elemento, el algoritmo divide la lista en dos sublistas de aproximadamente el mismo tamaño.
@@ -13,5 +13,4 @@ La combinación de los resultados de las dos sublistas implica una comparación 
 
 Conclusión:
 En cada nivel de la recursión, el problema se divide en dos subproblemas de tamaño (n/2).
-La profundidad de la recursión es logarítmica en relación con el tamaño de la lista, es decir, (O(\log n)).
-En cada nivel de la recursión, se realizan operaciones lineales (división de la lista y comparación), lo que resulta en una complejidad (O(n)) por nivel.
+La profundidad de la recursión es logarítmica en relación con el tamaño de la lista, es decir, (O(log n)).
