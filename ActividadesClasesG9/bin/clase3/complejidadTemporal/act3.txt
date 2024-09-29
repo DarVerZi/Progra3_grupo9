@@ -15,4 +15,3 @@ Conclusión:
 En cada nivel de la recursión, el problema se divide en dos subproblemas de tamaño (n/2).
 La profundidad de la recursión es logarítmica en relación con el tamaño de la lista, es decir, (O(log n)).
 En cada nivel de la recursión, se realizan operaciones de ordenación y combinación, lo que resulta en una complejidad (O(n log n)) por nivel.
-Por lo tanto, la complejidad total del algoritmo es (O(n log^2 n)), ya que combina la profundidad de la recursión ((O(log n))) con el trabajo realizado en cada nivel ((O(n log n))).
