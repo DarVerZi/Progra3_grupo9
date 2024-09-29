@@ -1,0 +1,18 @@
+Para analizar la complejidad algorítmica de tu método buscarMaxScoringClientes utilizando el método inductivo, podemos seguir estos pasos conceptuales:
+
+Caso Base:
+Cuando la lista de clientes tiene un tamaño menor o igual a (n) (clientes.size() <= n), el algoritmo simplemente devuelve la lista completa. Este caso tiene una complejidad lineal, es decir, (O(n)), ya que se crea una nueva lista con los elementos existentes.
+
+Paso Inductivo:
+Cuando la lista tiene más de (n) elementos, el algoritmo divide la lista en dos sublistas de aproximadamente el mismo tamaño.
+Luego, llama recursivamente a buscarMaxScoringClientes para cada sublista. Esto significa que el problema original se divide en dos subproblemas de tamaño (n/2) cada uno.
+Después de obtener los resultados de las dos sublistas, el algoritmo combina los resultados utilizando el método mergeMaxN, que ordena y selecciona los (n) clientes con los mayores puntajes. Esta combinación tiene una complejidad de (O(n \log n)) debido a la ordenación.
+
+Combinación de Resultados:
+La combinación de los resultados de las dos sublistas implica fusionar y ordenar los elementos, lo cual tiene una complejidad de (O(n \log n)).
+
+Conclusión:
+En cada nivel de la recursión, el problema se divide en dos subproblemas de tamaño (n/2).
+La profundidad de la recursión es logarítmica en relación con el tamaño de la lista, es decir, (O(\log n)).
+En cada nivel de la recursión, se realizan operaciones de ordenación y combinación, lo que resulta en una complejidad (O(n \log n)) por nivel.
+Por lo tanto, la complejidad total del algoritmo es (O(n \log^2 n)), ya que combina la profundidad de la recursión ((O(\log n))) con el trabajo realizado en cada nivel ((O(n \log n))).

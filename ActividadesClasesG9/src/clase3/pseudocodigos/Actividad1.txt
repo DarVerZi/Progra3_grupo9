@@ -1,8 +1,15 @@
-Aplicar la técnica de Divide y Vencerás en una lista de clientes con id, nombre y 
-    scoring, buscando el cliente con el scoring máximo.
+función clienteMayorScore(lista de clientes):
+    si tamaño de clientes es 1:
+        retornar el único cliente en la lista
 
-Algoritmo Actividad1 
-    Entrada: List<Cliente> --> Cliente {id numero, nombre String, scoring numero}
-    Salida: Cliente
+    mitad = tamaño de clientes / 2
+    lista izquierda = sublista de clientes desde 0 hasta mitad
+    lista derecha = sublista de clientes desde mitad hasta tamaño de clientes
 
-    
+    maxIzq = clienteMayorScore(lista izquierda)
+    maxDer = clienteMayorScore(lista derecha)
+
+    si maxIzq.scoring > maxDer.scoring:
+        retornar maxIzq
+    sino:
+        retornar maxDer

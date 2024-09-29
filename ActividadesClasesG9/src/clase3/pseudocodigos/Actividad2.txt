@@ -1,0 +1,23 @@
+función buscarMaxNumeros(lista de números):
+    si tamaño de números es 1:
+        retornar [números[0], MIN_VALOR]
+    si tamaño de números es 2:
+        si números[0] > números[1]:
+            retornar [números[0], números[1]]
+        sino:
+            retornar [números[1], números[0]]
+
+    mitad = tamaño de números / 2
+    lista izquierda = sublista de números desde 0 hasta mitad
+    lista derecha = sublista de números desde mitad hasta tamaño de números
+
+    maxIzq = buscarMaxNumeros(lista izquierda)
+    maxDer = buscarMaxNumeros(lista derecha)
+
+    retornar mergeMaxNumeros(maxIzq, maxDer)
+
+función mergeMaxNumeros(lista izquierda, lista derecha):
+    resultado = [izquierda[0], izquierda[1], derecha[0], derecha[1]]
+    ordenar resultado en orden descendente
+
+    retornar [resultado[0], resultado[1]]
