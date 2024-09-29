@@ -1,19 +1,19 @@
 Para analizar la complejidad algorítmica de tu método buscarMaxNumeros utilizando el método inductivo, podemos seguir estos pasos conceptuales:
 
 Caso Base:
-Cuando la lista de números tiene un solo elemento (numeros.size() == 1), el algoritmo devuelve ese elemento y un valor mínimo. Este caso tiene una complejidad constante, es decir, (O(1)).
-Cuando la lista tiene dos elementos (numeros.size() == 2), el algoritmo compara los dos elementos y devuelve el mayor y el segundo mayor. Este caso también tiene una complejidad constante, (O(1)).
+Cuando la lista de números tiene un solo elemento, el algoritmo devuelve ese elemento y un valor mínimo. Este caso tiene una complejidad constante, (O(1)).
+Cuando la lista tiene dos elementos, el algoritmo compara los dos elementos y devuelve el mayor y el segundo mayor. Este caso también tiene una complejidad constante.
 
 Paso Inductivo:
 Cuando la lista tiene más de dos elementos, el algoritmo divide la lista en dos sublistas de aproximadamente el mismo tamaño.
 Luego, llama recursivamente a buscarMaxNumeros para cada sublista. Esto significa que el problema original se divide en dos subproblemas de tamaño (n/2) cada uno.
-Después de obtener los resultados de las dos sublistas, el algoritmo combina los resultados utilizando el método mergeMaxNumeros, que ordena y selecciona los dos mayores números de las cuatro posibles opciones. Esta combinación tiene una complejidad constante, (O(1)).
+Después de obtener los resultados de las dos sublistas, el algoritmo combina los resultados utilizando el método mergeMaxNumeros, que ordena y selecciona los dos mayores números de las cuatro posibles opciones. Esta combinación tiene una complejidad constante.
 
 Combinación de Resultados:
 La combinación de los resultados de las dos sublistas implica ordenar y seleccionar los dos mayores números, lo cual es (O(1)).
 
 Conclusión:
 En cada nivel de la recursión, el problema se divide en dos subproblemas de tamaño (n/2).
-La profundidad de la recursión es logarítmica en relación con el tamaño de la lista, es decir, (O(\log n)).
+La profundidad de la recursión es logarítmica en relación con el tamaño de la lista, es decir, (O(log n)).
 En cada nivel de la recursión, se realizan operaciones lineales (división de la lista y combinación de resultados), lo que resulta en una complejidad (O(n)) por nivel.
-Por lo tanto, la complejidad total del algoritmo es (O(n \log n)), ya que combina la profundidad de la recursión ((O(\log n))) con el trabajo realizado en cada nivel ((O(n))).
+Por lo tanto, la complejidad total del algoritmo es (O(n log n)).
