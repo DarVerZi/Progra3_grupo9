@@ -1,0 +1,29 @@
+Clase Actividad4:
+
+    Método público estático findMaxNElements(lista de enteros numbers, entero n):
+        Si el tamaño de la lista numbers es menor o igual a n:
+            Retornar una nueva lista con los elementos de numbers
+
+        Entero mid = tamaño de la lista numbers dividido por 2
+        Lista left = sublista de numbers desde el inicio hasta mid
+        Lista right = sublista de numbers desde mid hasta el final
+
+        Lista maxLeft = llamar a findMaxNElements con left y n
+        Lista maxRight = llamar a findMaxNElements con right y n
+
+        Retornar mergeMaxN(maxLeft, maxRight, n)
+
+    Método privado estático mergeMaxN(lista left, lista right, entero n):
+        Lista merged = nueva lista con los elementos de left
+        Agregar todos los elementos de right a merged
+        Ordenar merged en orden descendente
+
+        Retornar una sublista de merged desde el inicio hasta el mínimo entre n y el tamaño de merged
+
+    Método público estático main(arreglo de cadenas args):
+        Lista numbers = lista de enteros con los siguientes elementos:
+            3, 5, 1, 9, 7, 2, 8, 6, 4
+
+        Entero n = 3
+        Lista maxElements = llamar a findMaxNElements con numbers y n
+        Imprimir "Los n elementos más grandes son: " + maxElements
