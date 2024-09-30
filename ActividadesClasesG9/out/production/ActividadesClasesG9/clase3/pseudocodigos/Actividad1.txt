@@ -1,8 +1,0 @@
-Aplicar la técnica de Divide y Vencerás en una lista de clientes con id, nombre y 
-    scoring, buscando el cliente con el scoring máximo.
-
-Algoritmo Actividad1 
-    Entrada: List<Cliente> --> Cliente {id numero, nombre String, scoring numero}
-    Salida: Cliente
-
-    
