@@ -1,5 +1,4 @@
 package clase2.activiades;
-import clase2.algoritmos.BinarySearchTree;
 import clase2.algoritmos.TreeNode;
 
 public class act1 {
@@ -13,7 +12,6 @@ public class act1 {
     }
     public static void main(String[] args) {
         // Crear un árbol binario de búsqueda de ejemplo
-        BinarySearchTree bst = new BinarySearchTree();
         TreeNode root = new TreeNode(10);
         root.left = new TreeNode(5);
         root.right = new TreeNode(15);
