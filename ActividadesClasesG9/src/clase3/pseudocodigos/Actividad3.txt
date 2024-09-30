@@ -1,0 +1,35 @@
+Clase Actividad3:
+
+    Método público estático buscarMaxScoringClientes(lista de clientes, entero n):
+        Si el tamaño de la lista de clientes es menor o igual a n:
+            Retornar una nueva lista con los clientes
+
+        Entero mitad = tamaño de la lista de clientes dividido por 2
+        Lista izq = sublista de clientes desde el inicio hasta mitad
+        Lista der = sublista de clientes desde mitad hasta el final
+
+        Lista maxizq = llamar a buscarMaxScoringClientes con izq y n
+        Lista maxder = llamar a buscarMaxScoringClientes con der y n
+
+        Retornar mergeMaxN(maxizq, maxder, n)
+
+    Método privado estático mergeMaxN(lista izq, lista der, entero n):
+        Lista merged = nueva lista con los elementos de izq
+        Agregar todos los elementos de der a merged
+        Ordenar merged en orden descendente basado en el scoring de los clientes
+
+        Retornar una sublista de merged desde el inicio hasta el mínimo entre n y el tamaño de merged
+
+    Método público estático Actividad_test(arreglo de cadenas args):
+        Lista clientes = lista de clientes con los siguientes elementos:
+            Cliente(1, "Juan", 85)
+            Cliente(2, "Ana", 92)
+            Cliente(3, "Luis", 78)
+            Cliente(4, "Maria", 95)
+            Cliente(5, "Carlos", 88)
+
+        Entero n = 3
+        Lista maxClientes = llamar a buscarMaxScoringClientes con clientes y n
+        Imprimir "Los n clientes con el scoring máximo son:"
+        Para cada cliente en maxClientes:
+            Imprimir cliente.toString()
