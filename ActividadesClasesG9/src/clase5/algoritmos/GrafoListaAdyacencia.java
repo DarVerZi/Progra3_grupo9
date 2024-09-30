@@ -14,7 +14,7 @@ public class GrafoListaAdyacencia {
             listaAdyacencia.add(new ArrayList<>());
         }
     }
-    
+
     public void agregarArista(int verticeOrigen, int verticeDestino, int costo) {
         listaAdyacencia.get(verticeOrigen).add(new int[]{verticeDestino, costo});
         listaAdyacencia.get(verticeDestino).add(new int[]{verticeOrigen, costo}); // Arista bidireccional
