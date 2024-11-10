@@ -1,0 +1,47 @@
+1. Posibles Ataques
+- Inyección de SQL: Intento de manipulación de la base de datos mediante consultas maliciosas.
+- Cross-Site Scripting (XSS): Inserción de scripts maliciosos para ejecutar código en el navegador de otros usuarios.
+- Ataques de fuerza bruta: Intento de adivinar credenciales de usuarios mediante prueba sistemática de combinaciones de usuario y contraseña.
+- Escaneo de puertos: Búsqueda de puertos abiertos en la red con el fin de identificar posibles vulnerabilidades en servicios.
+- Denegación de Servicio (DoS): Sobrecarga de los recursos del sistema con solicitudes falsas para interrumpir su funcionamiento.
+- Phishing y Spoofing: Engaños para redirigir a los usuarios a sitios falsos o captar sus datos personales.
+
+2A.  sistema de detección de ataques
+- Monitoreo de tráfico en tiempo real: Análisis del tráfico de red para identificar patrones anómalos.
+- Detección de patrones maliciosos: Análisis de logs para identificar accesos sospechosos (basados en IP, hora de acceso, tipo de solicitud, etc.).
+- Filtrado de contenido: Bloqueo de comandos SQL sospechosos, scripts de XSS y otros contenidos maliciosos en las solicitudes.
+- Mecanismos de autenticación robustos: Implementación de autenticación de dos factores (2FA) para reducir ataques de fuerza bruta.
+- Firewalls y Sistemas de Detección de Intrusos (IDS/IPS): Firewalls para bloquear intentos de acceso no autorizados y sistemas IDS/IPS para detectar y responder automáticamente a amenazas.
+Análisis de comportamiento: Uso de técnicas de machine learning para detectar comportamientos anómalos de los usuarios.
+
+2B.Técnicas y/o Herramientas de Detección:
+
+- Algoritmos de Machine Learning: Para identificar patrones maliciosos en el tráfico y en el comportamiento del usuario.
+- Herramientas de detección de anomalías: Software como Wireshark, Suricata, y Snort.
+- Sandboxing: Para analizar archivos adjuntos o enlaces sospechosos en un entorno controlado.
+- Honeypots: Crear sistemas "trampa" para atraer y monitorear la actividad de los atacantes y aprender de sus técnicas.
+
+3. Definición de Alfa y Beta:
+- Alfa: Representa el mejor puntaje (o nivel de seguridad) que el sistema de detección puede garantizar en cualquier momento.
+- Beta: Representa el menor puntaje o nivel de éxito que el atacante puede alcanzar sin ser detectado.
+
+Ejemplo de Poda Alfa-Beta:
+Si el sistema ya identificó un método de bloqueo efectivo para un ataque X (por ejemplo, un intento de fuerza bruta detectado y bloqueado), no es necesario seguir evaluando la eficacia de otros métodos de detección para ese tipo de ataque en particular en esta iteración.
+En caso de encontrar que una opción del atacante empeora la situación (por ejemplo, intentos reiterados que caen en listas negras), se descarta la evaluación de esa rama del árbol, ahorrando recursos de procesamiento.
+
+4. árbol de decisiones aplicando la lógica de ataque-defensa:
+
+Nodo Raíz (Inicio de ataque)
+Acción 1: Intento de fuerza bruta
+    Respuesta del sistema: Detección y bloqueo después de ciertos intentos.
+    Evaluación:
+        Alfa-Beta: Si se detecta actividad inusual desde una IP, se bloquea el acceso, y se detiene la exploración de otras ramas de intento de acceso desde la misma IP.
+Acción 2: Inyección de SQL
+    Respuesta del sistema: Filtrado y validación de entrada.
+    Evaluación:
+        Alfa-Beta: Si la inyección de SQL es detectada por el filtro, se descarta la evaluación de otras ramas para SQL, lo que optimiza la búsqueda de soluciones.
+Acción 3: XSS (Cross-Site Scripting)
+    Respuesta del sistema: Análisis y bloqueo de scripts no permitidos.
+    Evaluación:
+        Alfa-Beta: Si el sistema detecta un patrón de XSS común, se puede dejar de analizar esa cadena de ataques y pasar a otras posibles vulnerabilidades.
+

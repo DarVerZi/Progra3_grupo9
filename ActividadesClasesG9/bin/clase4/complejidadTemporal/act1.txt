@@ -1,3 +1,0 @@
-La complejidad de ordenar la lista de monedas es (O(n \log n)), donde (n) es el número de monedas.
-La complejidad del bucle que recorre las monedas es (O(n)).
-Por lo tanto, la complejidad temporal total es (O(n \log n)).
