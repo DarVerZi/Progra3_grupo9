@@ -1,0 +1,18 @@
+
+
+función obtenerComprobantes(comprobantes, monto)
+    resultado = lista vacía
+    MergeSortComprobantes.mergeSort(comprobantes)  // Ordenar comprobantes por valor
+
+    para cada comprobante en comprobantes
+        si monto <= 0
+            romper bucle
+        si comprobante.valor <= monto
+            añadir comprobante a resultado
+            monto = monto - comprobante.valor
+
+    si monto es igual a 0
+        retornar resultado
+    sino
+        retornar lista vacía
+        
