@@ -1,0 +1,15 @@
+función clienteMayorScore(lista de clientes):
+    si tamaño de clientes es 1:
+        retornar el único cliente en la lista
+
+    mitad = tamaño de clientes / 2
+    lista izquierda = sublista de clientes desde 0 hasta mitad
+    lista derecha = sublista de clientes desde mitad hasta tamaño de clientes
+
+    maxIzq = clienteMayorScore(lista izquierda)
+    maxDer = clienteMayorScore(lista derecha)
+
+    si maxIzq.scoring > maxDer.scoring:
+        retornar maxIzq
+    sino:
+        retornar maxDer

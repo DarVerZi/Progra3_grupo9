@@ -1,0 +1,37 @@
+Actividad 1
+
+¿Cómo funciona el backtracking en este problema?
+El backtracking en este problema intenta colocar dos reinas en un tablero de 4x4 sin que se ataquen.
+La función colocarReina recorre cada posición del tablero, y cuando encuentra una posición segura para una
+reina, la coloca temporalmente y llama recursivamente para intentar colocar la siguiente reina. Si una
+configuración no es válida, deshace (hace "backtrack") la última colocación y prueba la siguiente posición.
+Este proceso continúa hasta encontrar todas las soluciones posibles donde ambas reinas estén seguras.
+
+¿Qué pasa cuando el algoritmo no encuentra una solución?
+Cuando el algoritmo encuentra una solución (es decir, ha colocado dos reinas de manera segura en el tablero),
+imprime la configuración del tablero mediante la función imprimirTablero. Luego, sigue explorando otras
+posiciones para encontrar más soluciones posibles, ya que el programa no detiene su ejecución con la primera
+solución que encuentra.
+
+¿Qué ocurre cuando no puede colocar más reinas?
+Si el algoritmo llega a un punto donde no puede colocar más reinas de manera segura, deshace la última
+colocación (backtracking) y prueba la siguiente posición en la fila o columna actual. Este retroceso permite
+al algoritmo explorar otras configuraciones posibles del tablero. Si ya ha probado todas las posiciones y
+no puede colocar más reinas, el método termina indicando que no hay más soluciones en esa rama.
+
+
+Cuando el algoritmo "retrocede", deshace la última colocación de una reina (poniendo la posición de nuevo en 0)
+y vuelve a intentar con la siguiente opción en la fila o columna actual. Esto permite explorar otras
+posibles configuraciones cuando no se puede avanzar más en la rama actual.
+
+¿Qué modificaciones harías para aumentar N a 8? ¿Cómo crees que cambiaría el tiempo de ejecución?
+Para modificar el N simplemente habría que cambiar su variable de N=4 a N=8. El tiempo de ejecución aumentaria
+exponencialmente ya que la cantidad de posibles combinaciones aumenta de forma factorial.
+
+¿Por qué el método isSafe es crucial en este algoritmo?
+Es crucial ya que permite saber si una reina puede ser colocada de manera segura en una posición sin ser
+atacada por otras reinas en el tablero.
+
+
+
+
